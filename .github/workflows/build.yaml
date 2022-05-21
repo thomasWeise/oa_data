@@ -17,8 +17,9 @@ jobs:
       with:
         python-version: ${{ matrix.python-version }}
 # then execute the actual build process
-    - name: Install moptipy from github
+    - name: Compile github pages.
       run: |
+        pip install markdown
         cd /home/runner/work/oa_data/
         mkdir -p ./build
         python "./oa_data/scripts/build_github_page.py" "./oa_data/" "./build/"
