@@ -23,11 +23,11 @@ These algorithms are simple local searches that accept only *strictly improving*
 
 - [`jssp_hc_swap2.zip`](jssp/jssp_hc_swap2.zip): The results of a hill climber using the operator `swap2` that swaps two (different) job IDs.
   992&nbsp;kB zipped, 2.2&nbsp;MB unzipped.
-- [`jssp_hcr_swap2.zip`](jssp/hcr_jssp_swap2.zip): The results of the hill climber with restarts using the operator `swap2` that swaps two (different) job IDs, for different restart settings.
+- [`jssp_hcr_swap2.zip`](jssp/jssp_hcr_swap2.zip): The results of the hill climber with restarts using the operator `swap2` that swaps two (different) job IDs, for different restart settings.
   14.5&nbsp;MB zipped, 31.6&nbsp;MB unzipped.
-- [`jssp_hc_swapn.zip`](jssp/hc_jssp_swapn.zip): The results of a hill climber using the operator `swapn` that swaps a randomly chosen number (different) of job IDs.
+- [`jssp_hc_swapn.zip`](jssp/jssp_hc_swapn.zip): The results of a hill climber using the operator `swapn` that swaps a randomly chosen number (different) of job IDs.
   1&nbsp;MB zipped, 2.2&nbsp;MB unzipped.
-- [`jssp_hcr_swapn.zip`](jssp/hcr_jssp_swapn.zip): The results of the hill climber with restarts using the operator `swapn` that swaps a randomly chosen number of (different) job IDs, for different restart settings.
+- [`jssp_hcr_swapn.zip`](jssp/jssp_hcr_swapn.zip): The results of the hill climber with restarts using the operator `swapn` that swaps a randomly chosen number of (different) job IDs, for different restart settings.
   14.4&nbsp;MB zipped, 31.2&nbsp;MB unzipped.
   
   
