@@ -20,17 +20,17 @@ jobs:
     - name: Compile github pages.
       run: |
         pip install markdown
-        cd /home/runner/work/oa_data/
+        cd /home/runner/work/oa_data/oa_data/
         mkdir -p ./build
-        python "./oa_data/scripts/build_github_page.py" "./oa_data/" "./build/"
+        python "./scripts/build_github_page.py" "./" "./build/"
 # prevent jekyll
     - name: prevent jekyll
-      run: touch /home/runner/work/oa_data/build/.nojekyll
+      run: touch /home/runner/work/oa_data/oa_data/build/.nojekyll
 # deploy to github pages
     - name: deploy documentation
       uses: JamesIves/github-pages-deploy-action@v4.3.3
       with:
         branch: gh-pages
-        folder: /home/runner/work/oa_data/build/
+        folder: /home/runner/work/oa_data/oa_data/build/
         single-commit: true
 
