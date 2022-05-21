@@ -1,4 +1,4 @@
-name: make build
+name: pages deployment
 
 on: [push]
 
