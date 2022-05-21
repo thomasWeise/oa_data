@@ -28,7 +28,7 @@ jobs:
       run: touch /home/runner/work/oa_data/build/.nojekyll
 # deploy to github pages
     - name: deploy documentation
-      uses: JamesIves/github-pages-deploy-action@4.1.4
+      uses: JamesIves/github-pages-deploy-action@v4.3.3
       with:
         branch: gh-pages
         folder: /home/runner/work/oa_data/build/
