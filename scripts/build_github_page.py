@@ -5,8 +5,7 @@ import os
 import re
 import shutil
 import sys
-from contextlib import nullcontext, AbstractContextManager
-from typing import Final, Callable, List
+from typing import Final, Callable, List, Iterable
 
 import markdown  # type: ignore
 

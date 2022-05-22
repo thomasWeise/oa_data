@@ -1,6 +1,7 @@
 # Experimental Data of the Book "Optimization Algorithms" 
 
 Here we provide the data of the experiments conducted for the electronic book "[Optimization Algorithms](https://thomasweise.github.io/oa)".
+These experiments have been done using the *The Metaheuristic Optimization in Python*, [`moptipy`](https://thomasweise.github.io/moptipy/index.html) for short.
 
 
 ## Job Shop Scheduling Problem (JSSP)
