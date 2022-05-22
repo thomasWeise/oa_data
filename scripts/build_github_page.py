@@ -43,16 +43,23 @@ logger(f"now loading markdown sources '{md_file}'.")
 md_text: str
 with io.open(md_file, "rt", encoding='utf-8-sig') as reader:
     md_text = reader.read()
+md_text = md_text.replace(" \n", "\n")
 
+# Now we get a HTML fragment.
 logger(f"now converting markdown sources to html.")
 html_text = markdown.markdown(text=md_text.strip(),
                               output_format="html").strip()
 
+# We want to process all links that we can find and make sure that all
+# local files are copied.
 regexp_link = 'href=[\'"]?([^\'" >]+)'
 pattern = re.compile(regexp_link)
-links = re.findall(pattern, html_text)
+links: Iterable[str] = re.findall(pattern, html_text)
 
 for link in links:
+    if link.startswith("http:") or link.startswith("https:"):
+        logger(f"ignoring external url '{link}'.")
+        continue
     src_file = os.path.abspath(os.path.join(source_path, link))
     if os.path.isfile(src_file) and (src_file.startswith(source_path)):
         dest_file = os.path.abspath(os.path.join(dest_path, link))
@@ -66,7 +73,7 @@ for link in links:
             logger(f"now copying '{src_file}' to '{dest_file}'.")
             shutil.copy(src_file, dest_file)
     else:
-        logger(f"ignoring url '{link}'.")
+        logger(f"ignoring non-local file url '{link}'.")
 
 logger("canonicalizing html.")
 html_text = html_text.replace("\n", " ").replace("  ", " ") \
@@ -77,7 +84,7 @@ html_text = html_text.replace("\n", " ").replace("  ", " ") \
     .replace("</p> ", "</p>").replace("</li> ", "</li>") \
     .replace("</ul> ", "</ul>").replace("</ol> ", "</ol>")
 
-logger("grapping title.")
+logger("grabbing title.")
 pattern = re.compile('<h1>(.*?)</h1>')
 title = re.findall(pattern, html_text)
 if len(title) != 1:
