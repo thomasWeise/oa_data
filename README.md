@@ -6,6 +6,8 @@ These experiments have been done using the *The Metaheuristic Optimization in Py
 
 ## Job Shop Scheduling Problem (JSSP)
 
+The Job Shop Scheduling Problem ([JSSP](https://thomasweise.github.io/moptipy/moptipy.examples.jssp.html#module-moptipy.examples.jssp)) is a classical NP-hard optimization problem where the goal is to find schedules (assignments of jobs to machines) that complete as fast as possible.
+
 ### Random Sampling-Related Algorithms
 
 These algorithms make random search moves without using information from the objective function.
