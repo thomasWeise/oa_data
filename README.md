@@ -52,7 +52,7 @@ They start with a population of `mu` random solutions.
 In each iteration, they keep the `mu` best solutions in the population.
 Then they create `lambda` new solutions by applying search operators to them and add them to the population.
 
-- [`jssp_eanocr_swap2`](jssp/jssp_eanocr_swap2.zip): The results of an [EA without binary operator](https://thomasweise.github.io/moptipy/moptipy.algorithms.html#moptipy.algorithms.ea_without_crossover.EAnoCR)using the [operator `swap2`](https://thomasweise.github.io/moptipy/moptipy.operators.permutations.html#module-moptipy.operators.permutations.op1_swap2) that swaps two (different) job IDs.
+- [`jssp_eanocr_swap2`](jssp/jssp_eanocr_swap2.zip): The results of an [EA without binary operator](https://thomasweise.github.io/moptipy/moptipy.algorithms.html#moptipy.algorithms.ea_without_crossover.EAnoCR) using the [operator `swap2`](https://thomasweise.github.io/moptipy/moptipy.operators.permutations.html#module-moptipy.operators.permutations.op1_swap2) that swaps two (different) job IDs.
   44.5&nbsp;MB zipped, 93.7&nbsp;MB unzipped.
 
 
