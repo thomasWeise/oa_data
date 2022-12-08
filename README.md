@@ -57,13 +57,24 @@ Then they create `lambda` new solutions by applying search operators to them and
 - [`jssp_ea_no_binary_swap2.tar.xz`](jssp/jssp_ea_no_binary_swap2.tar.xz): The results of an Evolutionary Algorithm ([EA](https://thomasweise.github.io/moptipy/moptipy.algorithms.so.html#module-moptipy.algorithms.so.ea)) using the unary [operator `swap2`](https://thomasweise.github.io/moptipy/moptipy.operators.permutations.html#module-moptipy.operators.permutations.op1_swap2) that swaps two (different) job IDs and no binary operator.
   56.2&nbsp;MB packed, 239.9&nbsp;MB unpacked.
 - [`jssp_ea_gap_swap2.tar.xz`](jssp/jssp_ea_gap_swap2.tar.xz): The results of an Evolutionary Algorithm ([EA](https://thomasweise.github.io/moptipy/moptipy.algorithms.so.html#module-moptipy.algorithms.so.ea)) using the unary [operator `swap2`](https://thomasweise.github.io/moptipy/moptipy.operators.permutations.html#module-moptipy.operators.permutations.op1_swap2) that swaps two (different) job IDs and the binary generalized alternating position [operator `gap`](https://thomasweise.github.io/moptipy/moptipy.operators.permutations.html#moptipy.operators.permutations.op2_gap.Op2GeneralizedAlternatingPosition).
-  54.3&nbsp;MB packed, 238.9&nbsp;MB unpacked
+  54.3&nbsp;MB packed, 238.9&nbsp;MB unpacked.
 - [`jssp_generalEa.tar.xz`](jssp/jssp_generalEa.tar.xz): The results of a general [Evolutionary Algorithm](https://thomasweise.github.io/moptipy/moptipy.algorithms.so.html#moptipy.algorithms.so.general_ea.GeneralEA) with configurable fitness assignment process, survival selection, and mating selection.
   As fitness assignment process, we use either the objective values [directly](https://thomasweise.github.io/moptipy/moptipy.algorithms.so.fitnesses.html#module-moptipy.algorithms.so.fitnesses.direct), their [ranks](https://thomasweise.github.io/moptipy/moptipy.algorithms.so.fitnesses.html#module-moptipy.algorithms.so.fitnesses.rank), or their [ranks combined with the iteration indices](https://thomasweise.github.io/moptipy/moptipy.algorithms.so.fitnesses.html#module-moptipy.algorithms.so.fitnesses.rank_and_iteration).
   As selection algorithms, we test [fitness proportionate selection](https://thomasweise.github.io/moptipy/moptipy.algorithms.modules.selections.html#module-moptipy.algorithms.modules.selections.fitness_proportionate_sus), tournament selection [with](https://thomasweise.github.io/moptipy/moptipy.algorithms.modules.selections.html#module-moptipy.algorithms.modules.selections.tournament_with_repl) and [without](https://thomasweise.github.io/moptipy/moptipy.algorithms.modules.selections.html#module-moptipy.algorithms.modules.selections.tournament_without_repl) replacements, [best](https://thomasweise.github.io/moptipy/moptipy.algorithms.modules.selections.html#module-moptipy.algorithms.modules.selections.best) selection, and [random selection](https://thomasweise.github.io/moptipy/moptipy.algorithms.modules.selections.html#module-moptipy.algorithms.modules.selections.random_without_repl).
   All setups use the unary [operator `swap2`](https://thomasweise.github.io/moptipy/moptipy.operators.permutations.html#module-moptipy.operators.permutations.op1_swap2) that swaps two (different) job IDs and the binary generalized alternating position [operator `gap`](https://thomasweise.github.io/moptipy/moptipy.operators.permutations.html#moptipy.operators.permutations.op2_gap.Op2GeneralizedAlternatingPosition) at a rate of 0.125 as well as &#x3BC;=&#x3BB;&#x2208;{4,32}.
-  10.0&nbsp;MB packed, 43.7&nbsp;MB unpacked
+  10.0&nbsp;MB packed, 43.7&nbsp;MB unpacked.
 
+
+### Simulated Annealing (SA)
+
+Simulated Annealing ([SA](https://thomasweise.github.io/moptipy/moptipy.algorithms.so.html#module-moptipy.algorithms.so.simulated_annealing)) is similar to RLS in that it is a local search that always accepts any non-worsening move.
+However, different from RLS, it also sometimes accepts a move to a solution worse than the current one.
+The probability to accept such a move is the higher the higher the current "[temperature](https://thomasweise.github.io/moptipy/moptipy.algorithms.so.html#moptipy.algorithms.so.temperature_schedule.TemperatureSchedule.temperature)" is and the lower the worse the move is.
+The "temperature" is controlled by a [temperature schedule](https://thomasweise.github.io/moptipy/moptipy.algorithms.so.html#module-moptipy.algorithms.so.temperature_schedule).
+
+- [`jssp_sa_swap2.tar.xz`](jssp/jssp_sa_swap2.tar.xz): The results of a Simulated Annealing ([SA](https://thomasweise.github.io/moptipy/moptipy.algorithms.so.html#module-moptipy.algorithms.so.simulated_annealing)) algorithm with [exponential](https://thomasweise.github.io/moptipy/moptipy.algorithms.so.html#moptipy.algorithms.so.temperature_schedule.ExponentialSchedule) temperature schedule and the unary [operator `swap2`](https://thomasweise.github.io/moptipy/moptipy.operators.permutations.html#module-moptipy.operators.permutations.op1_swap2) that swaps two (different) job IDs.
+   32.2&nbsp;MB packed, 150.7&nbsp;MB unpacked.
+ 
 
 ## License
 
