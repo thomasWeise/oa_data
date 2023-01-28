@@ -73,8 +73,21 @@ The probability to accept such a move is the higher the higher the current "[tem
 The "temperature" is controlled by a [temperature schedule](https://thomasweise.github.io/moptipy/moptipy.algorithms.so.html#module-moptipy.algorithms.so.temperature_schedule).
 
 - [`jssp_sa_swap2.tar.xz`](jssp/jssp_sa_swap2.tar.xz): The results of a Simulated Annealing ([SA](https://thomasweise.github.io/moptipy/moptipy.algorithms.so.html#module-moptipy.algorithms.so.simulated_annealing)) algorithm with [exponential](https://thomasweise.github.io/moptipy/moptipy.algorithms.so.html#moptipy.algorithms.so.temperature_schedule.ExponentialSchedule) temperature schedule and the unary [operator `swap2`](https://thomasweise.github.io/moptipy/moptipy.operators.permutations.html#module-moptipy.operators.permutations.op1_swap2) that swaps two (different) job IDs.
-   32.2&nbsp;MB packed, 150.7&nbsp;MB unpacked.
+  32.2&nbsp;MB packed, 150.7&nbsp;MB unpacked.
  
+
+### Memetic Algorithms (MA)
+
+Memetic Algorithms (MAs) are basically Evolutionary Algorithms where each solution is refined by another algorithm, usually a local search, for a pre-defined number of `ls_fes`&nbsp;FEs.
+We can implement this concept in several different ways, e.g., as a [MA with hard-wired RLS](https://thomasweise.github.io/moptipy/moptipy.algorithms.so.html#module-moptipy.algorithms.so.marls), or as a [MA where arbitrary algorithms can be plugged in](https://thomasweise.github.io/moptipy/moptipy.algorithms.so.html#module-moptipy.algorithms.so.ma).
+Here we provide the results of the former (MA+RLS) and the latter (MA+Simulated Annealing).
+
+- [`jssp_marls_gap_swap2.tar.xz`](jssp/jssp_marls_gap_swap2.tar.xz): The results of an [MA with hard-wired RLS](https://thomasweise.github.io/moptipy/moptipy.algorithms.so.html#module-moptipy.algorithms.so.marls) using our binary [operator `gap`](https://thomasweise.github.io/moptipy/moptipy.operators.permutations.html#moptipy.operators.permutations.op2_gap.Op2GeneralizedAlternatingPosition) and the unary [operator `swap2`](https://thomasweise.github.io/moptipy/moptipy.operators.permutations.html#module-moptipy.operators.permutations.op1_swap2) in the RLS for different values of `ls_fes` and `mu=lambda`.
+  34.2&nbsp;MB packed, 185.7&nbsp;MB unpacked. 
+- [`jssp_masa_gap_swap2.tar.xz`](jssp/jssp_masa_gap_swap2.tar.xz): The results of an [MA](https://thomasweise.github.io/moptipy/moptipy.algorithms.so.html#module-moptipy.algorithms.so.ma) with [Simulated Annealing](https://thomasweise.github.io/moptipy/moptipy.algorithms.so.html#module-moptipy.algorithms.so.simulated_annealing) (SA) plugged it, using our binary [operator `gap`](https://thomasweise.github.io/moptipy/moptipy.operators.permutations.html#moptipy.operators.permutations.op2_gap.Op2GeneralizedAlternatingPosition) and the unary [operator `swap2`](https://thomasweise.github.io/moptipy/moptipy.operators.permutations.html#module-moptipy.operators.permutations.op1_swap2) in the SA for different values of `ls_fes` and &#x3BC;=&#x3BB.
+  The SA is configured to have a starting temperature&nbsp;`T_0` of&nbsp;16 and has &#x3B5; set such that after 80% of `ls_fes` has been consumed, the temperature will be approximately&nbsp;0.22.
+  38.8&nbsp;MB packed, 185.6&nbsp;MB unpacked.
+
 
 ## License
 
